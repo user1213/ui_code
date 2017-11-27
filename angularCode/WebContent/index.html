@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+    @import url('css/style.css');
+    @import url('css/jquery.webui-popover.css');
+    @import url('css/font-awesome/css/font-awesome.css');
+</style>
+</head>
+<body>
+<div id="content" ng-app="empApp" ng-controller="empControl as ec" ng-init="ec.init()">
+    <span ng-bind="ec.appName" ></span><br />
+    <span ng-bind="ec.location"></span><br /><br />
+     <div class="formLayout">
+        <label>Name: </label>
+        <span class="text"><input type="text" id="txtName" ng-model="ec.name" /></span><br /><br />
+        <label>Company: </label>
+        <span class="text"><input type="text" id="txtCompany" ng-model="ec.company" /></span><br /><br />
+        <label>Salary: </label>
+        <span class="text"><input type="text" id="txtSalary" ng-model="ec.salary" ng-keyup="ec.addByKey($event)"/></span><br /><br />
+        
+        <input type="button" id="btnAdd" value="Add" ng-click="ec.add()"/>&nbsp;
+        <input type="button" id="btnReset" value="Reset" ng-click="ec.reset()" />
+     </div><br /><br />
+     
+     <ul id="empList">
+        
+     </ul>
+</div>
+
+<script src="js/libs/jquery.js"></script>
+<script src="js/libs/underscore.js"></script>
+<script src="js/libs/jquery.webui-popover.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+<script src="js/app/script_angular.js"></script>
+</body>
+</html>
